@@ -136,6 +136,36 @@ All notable changes to this project will be documented in this file.
 - Shared server environment variables (#7764)
 - *(forms)* Make textarea monospace opt-in and improve multiline toggle
 - *(jobs)* Implement exponential backoff for unreachable servers (#9184)
+- *(service)* Update Convex to current latest version (#9392)
+- *(service)* Update Rivet to v2.2.0 (#9378)
+- Add grimmory service and database configuration to compose template
+- *(service)* Add grimmory (#9109)
+- *(service)* Update Supabase to current latest versions (#8316)
+- *(ui)* Added network heading on services page for network related options
+- *(ui)* Added advanced page on service settings page
+- *(ui)* Categorize application advanced settings into logical sections
+- *(ui)* Categorize application advanced settings into logical sections (#9234)
+- *(ui)* Add info callout to clone resource section about excluded items
+- *(ui)* Add info callout to clone resource section about excluded items (#9233)
+- *(ui)* Display memory limit fields in single row
+- *(ui)* Display memory limit fields in single row (#9232)
+- *(ui)* Improve service settings UX, headings, and helper text for clarity (#9027)
+- *(services)* Add architecture warning
+- *(services)* Add architecture warning (#8390)
+- *(env)* Add buildtime and runtime checkboxes for shared variables
+- *(applications)* Add DELETE endpoint for preview deployments by PR id
+- *(api)* Add DELETE endpoint for preview deployments by PR id (#9614)
+- *(security)* Support expiration on API tokens with warning notifications
+- *(security)* Add expiration support for API tokens (#9677)
+- *(service)* Disable calcom
+- *(service)* Disable calcom (#9776)
+- *(service)* Add healthcheck to langfuse-worker
+- *(service)* Add healthcheck to langfuse-worker (#9772)
+- Add Cap to templates
+- *(services)* Add Cap to templates (#9729)
+- *(service)* Update docker-compose according to the official doc
+- *(service)* Enable plane
+- *(service)* Enable plane (#9641)
 
 ### 🐛 Bug Fixes
 
@@ -410,6 +440,91 @@ All notable changes to this project will be documented in this file.
 - *(deployment)* Resolve intermittent pre-deployment command failures (#9165)
 - *(project)* Handle slash branches in public repo URLs
 - *(backups)* Enforce retention and clean up stale executions
+- *(user-deletion)* Handle GitHub app sources across team cleanup
+- *(service)* Allow overriding GOTRUE_SITE_URL in Supabase template
+- *(services)* Bump images of alexandrie to fix security issue (#9434)
+- *(template)* Minecraft was on wrong category (#9387)
+- *(service)* Fix librechat healthcheck
+- *(service)* Fix librechat healthcheck and update dependencies  (#9358)
+- *(templates)* Fix n8n and task-runners health check endpoints
+- *(service)* N8n task-runners health check fails (#9309)
+- *(service)* Add CORS defaults to Directus templates
+- *(service)* Directus cors not applied in preflight requests (#9081)
+- *(supabase)* Fix TUS resumable upload 401 by adding leading slash to TUS_URL_PATH
+- *(supabase)* Update to latest versions, fix vector config, add missing env vars
+- *(supabase)* Fix vector log collection bugs
+- *(supabase)* Add MCP route protection, update edge functions to Deno.serve()
+- *(supabase)* Comprehensive template update to match official self-hosting setup
+- Default STORAGE_TENANT_ID to storage-single-tenant for backward compatibility
+- *(service)* Allow overriding GOTRUE_SITE_URL in Supabase template (#9079)
+- *(service)* Nextcloud workers exhaustion due to low interval healthcheck
+- *(service)* Nextcloud workers exhaustion due to low interval healthcheck (#9440)
+- *(security)* Add apk upgrade to helper and realtime Dockerfiles
+- *(security)* Run apk upgrade in development Dockerfile
+- *(security)* Bump helper and realtime versions across manifests
+- *(docker)* Add apk upgrade to helper, realtime, and development Dockerfiles (#9437)
+- *(validation)* Allow quoted shell args in docker options
+- *(validation)* Allow quoted docker run options in custom config (#9481)
+- *(template)* Several templates on wrong catagory.
+- *(service)* Several templates on wrong catagory. (#9449)
+- *(service)* Netbird-client wrong volume path (#9484)
+- *(ui)* Initialize latestVersion in Upgrade component mount
+- *(upgrade)* Clear stale upgrade flag when version is already current
+- *(ui)* Initialize latestVersion in Upgrade component mount (#7774)
+- *(team)* Transfer instance-wide sources to root team on deletion
+- *(user-deletion)* Safely clean up team-owned Git app sources (#9435)
+- *(ui)* Make dashboard add buttons visible in light mode
+- *(ui)* Dashboard homepage add buttons are invisible in light mode (#9456)
+- *(deployments)* Use full-height deployment logs layout
+- *(ui)* Improve responsive project headings and controls
+- *(validation)* Allow protocol suffix in port mappings (/tcp, /udp, /sctp)
+- *(validation)* Support IP binding in port mappings
+- *(validation)* Allow protocol suffix and ip in port mappings (/tcp, /udp, /sctp) (#9503)
+- *(database)* Use && instead of || for conf null/empty checks
+- *(ui)* Changed required port callout from warning to info
+- *(ui)* Updated example domains on helper text to be https instead of http
+- *(install)* Use Rocky Linux RHEL Docker repository
+- *(installer)* Use RHEL Docker repo for Rocky Linux (#9541)
+- *(dev)* Add Docker volume path mapping to testing-host for database deployments
+- *(dev)* Add Docker volume path mapping to testing-host for database deployments (#9534)
+- *(healthcheck)* Accept comma and semicolon in health check path validation
+- *(healthcheck)* User input is rejected if path contains comma and semicolon (#9223)
+- *(templates)* Mark Cal.com as AMD-only
+- *(git)* Preserve ssh scheme URLs with custom ports
+- *(git)* Harden ssh URL normalization
+- *(git)* Preserve ssh scheme URLs with custom ports (#9425)
+- *(migrations)* Guard uuid column addition and filter teamless servers
+- *(team)* Mark servers unreachable when subscription ends
+- *(server)* Exclude persistent resources from container prune
+- *(server)* Exclude persistent resources from container prune (#9654)
+- *(api)* Use explicit team ID for S3 storage lookup in backup endpoints
+- *(api)* Use explicit team ID for S3 storage lookup in backup endpoints (#9655)
+- *(database)* Prevent command injection in healthcheck via CMD exec-form
+- *(database)* Mount guard, healthcheck CMD exec-form, port input layout (#9674)
+- *(database)* Enforce credential format validation and sanitize init/SSL arguments
+- *(database)* Skip credential pattern validation for unchanged values
+- *(database)* Credential format validation with dirty-value escape hatch (#9676)
+- *(database)* Tighten Postgres init script filename handling
+- *(database)* Tighten Postgres init script filename handling (#9681)
+- *(navigation)* Replace wire:navigate.hover with wire:navigate
+- *(navigation)* Replace wire:navigate.hover with wire:navigate (#9742)
+- *(helper)* Add Alpine.js click toggle to info helper popup
+- *(helper)* Stop info icon click from propagating to parent on mobile (#9809)
+- *(service)* Docs link on cap-captcha.yaml
+- *(service)* Add category on cap-captcha.yaml
+- *(service)* Service url variable on cap-captcha.yaml
+- *(service)* Pin docker image on cap-captcha.yaml
+- *(service)* Add healthcheck on cap-captcha.yaml
+- *(service)* Add port to metadata on plane
+- *(service)* Twenty fails to deploy due to dependency unhealthy
+- *(service)* Twenty fails to deploy due to dependency unhealthy (#9603)
+- *(templates)* Restore Jitsi Meet service template (#4813)
+- *(service)* Add missing category to jitsi
+- *(service)* Remove volume declaration on jitsi
+- *(service)* Jitsi Meet doesn't work (#9594)
+- Add missing database alteration step for latest image version
+- *(service)* Add missing database alteration step for Logto latest image (#9376)
+- *(service)* Rally invalid next public url  (#9041)
 
 ### 💼 Other
 
@@ -423,6 +538,19 @@ All notable changes to this project will be documented in this file.
 - *(deps)* Bump league/commonmark from 2.8.1 to 2.8.2 (#9047)
 - *(deps)* Bump phpseclib/phpseclib from 3.0.49 to 3.0.50
 - *(deps)* Bump phpseclib/phpseclib from 3.0.49 to 3.0.50 (#9044)
+- *(template)* Update Rivet template
+- *(deps-dev)* Bump vite from 7.3.0 to 7.3.2
+- *(deps-dev)* Bump vite from 7.3.0 to 7.3.2 (#9457)
+- *(deps)* Bump phpseclib/phpseclib from 3.0.50 to 3.0.51
+- *(deps)* Bump phpseclib/phpseclib from 3.0.50 to 3.0.51 (#9500)
+- *(deps-dev)* Bump axios from 1.13.2 to 1.15.0
+- *(deps-dev)* Bump axios from 1.13.2 to 1.15.0 (#9515)
+- *(deps)* Bump axios in /docker/coolify-realtime
+- *(deps)* Bump axios from 1.13.6 to 1.15.0 in /docker/coolify-realtime (#9516)
+- *(realtime)* Bump coolify-realtime to 1.0.13
+- *(realtime)* Bump coolify-realtime to 1.0.13
+- *(deps-dev)* Bump follow-redirects from 1.15.11 to 1.16.0
+- *(deps-dev)* Bump follow-redirects from 1.15.11 to 1.16.0 (#9580)
 
 ### 🚜 Refactor
 
@@ -459,6 +587,33 @@ All notable changes to this project will be documented in this file.
 - Use forceCreate() for internal model creation
 - Define explicit fillable attributes on all Eloquent models (#9282)
 - *(models)* Extract defaultStandaloneDockerAttributes method on Server
+- Scope destination and resource lookups by current team
+- *(admin)* Use named routes for admin index navigation
+- Tighten team scoping on resource creation and admin nav (#9651)
+- *(webhook)* Encrypt manual webhook secrets and tighten HMAC verification
+- *(webhook)* Encrypt manual webhook secrets and tighten HMAC verification (#9652)
+- *(api)* Validate and throttle feedback endpoint
+- *(help)* Cap feedback subject length to 255 characters
+- *(help)* Raise feedback subject cap to 600 characters
+- *(api)* Validate and throttle feedback endpoint (#9653)
+- *(volumes)* Validate input and escape shell args
+- *(volumes)* Validate input and escape shell args (#9666)
+- *(backup)* Validate database backup upload file type and size
+- *(backup)* Validate database backup upload file type and size (#9667)
+- *(storage)* Tighten S3 endpoint URL validation
+- *(storage)* Tighten S3 endpoint URL validation (#9668)
+- *(settings)* Validate dev_helper_version and escape build args
+- *(settings)* Harden dev_helper_version validation and escape build args (#9670)
+- *(api)* Return generic error messages for upstream and storage failures
+- *(api)* Return stable generic error messages for 5xx responses (#9669)
+- *(auth)* Drop implicit email verification on invitation link login
+- *(auth)* Upgrade email verification hash to sha256
+- *(cli)* Validate --date and escape shell args on logs:scheduled
+- Harden auth, CLI input, and scheduled-log viewer (#9672)
+- *(database)* Escape postgres_user in SSL chown command
+- *(database)* Align Postgres SSL chown escaping with MySQL (#9682)
+- *(validation)* Tokenize shell-safe command pattern
+- *(validation)* Tokenize shell-safe command pattern (#9684)
 
 ### 📚 Documentation
 
@@ -481,6 +636,13 @@ All notable changes to this project will be documented in this file.
 - Update changelog
 - Update changelog
 - Update changelog
+- Update changelog
+- *(tests)* Replace advisory ID with descriptive comment in healthcheck injection test
+- *(sponsors)* Add PrivateAlps to Huge and YouStable to Small sponsors
+- *(sponsors)* Update PrivateAlps description
+- *(sponsors)* Add MindedTech to Small sponsors
+- *(sponsors)* Add NetRouting to Small sponsors
+- *(sponsors)* Add ParsecPH to Small sponsors
 
 ### ⚡ Performance
 
@@ -492,6 +654,7 @@ All notable changes to this project will be documented in this file.
 - *(docker)* Standardize service startup log message format
 - *(dev)* Standardize log message format with INFO/ERROR prefixes
 - *(navbar)* Use tracking-tight instead of tracking-wide for logo
+- *(database)* Wrap public port inputs in flex-col gap-2 container
 
 ### 🧪 Testing
 
@@ -503,6 +666,8 @@ All notable changes to this project will be documented in this file.
 - *(factories)* Add missing model factories for app test suite
 - *(magic-variables)* Add feature tests for SERVICE_URL/FQDN variable handling
 - Add behavioral ssh key stale-file regression
+- *(upgrade)* Add mount tests for cached and fallback versions
+- Remove GHSA advisory IDs from test descriptions and comments
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -592,6 +757,23 @@ All notable changes to this project will be documented in this file.
 - *(docker)* Update container image versions
 - Bump version to 4.0.0-beta.471
 - Update pr-quality.yaml
+- Update Supabase template to latest versions
+- *(community)* Remove bounty-related templates and docs
+- *(community)* Remove Algora bounty program references (#9436)
+- *(service)* Update nextcloud healthcheck endpoint
+- *(service)* Update nextcloud healthcheck endpoint (#9470)
+- Bump version to 4.0.0-beta.472
+- *(release)* Bump version to 4.0.0-beta.473
+- Mark calcom amd only
+- *(version)* Bump Coolify to 4.0.0-beta.474
+- *(ui)* Add a deprecated notice component
+- *(swarm)* Mark docker swarm as deprecated
+- Mark v4 docker swarm support as deprecated (#9621)
+- *(service)* Update beszel to 0.18.7
+- *(service)* Update beszel-agent to 0.18.7
+- *(service)* Update beszel to 0.18.7 (#9775)
+- *(templates)* Sync service-templates from next
+- *(templates)* Sync service-templates from next (#9884)
 
 ## [4.0.0-beta.461] - 2026-01-16
 
